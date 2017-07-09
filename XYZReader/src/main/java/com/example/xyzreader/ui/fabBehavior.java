@@ -30,7 +30,7 @@ public class fabBehavior extends FloatingActionButton.Behavior {
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, FloatingActionButton child,
         View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
         super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
-        if (dyConsumed > 0) {
+        if (dyConsumed > 10) {
         // User scrolled up -> hide the FAB
             child.hide(new FloatingActionButton.OnVisibilityChangedListener() {
                 /**
@@ -44,7 +44,7 @@ public class fabBehavior extends FloatingActionButton.Behavior {
                     fab.setVisibility(View.INVISIBLE);
                 }
             });
-        } else if (dyConsumed < 0) {
+        } else if (dyConsumed < -10) {
             child.show(new FloatingActionButton.OnVisibilityChangedListener() {
                 @Override
                 public void onShown(FloatingActionButton fab) {
